@@ -27,9 +27,10 @@ io.on('connection', (socket) => {
 
     socket.emit('newMessage',generateMessage('Admin', 'Welcome to chat...'));
 
-    socket.on('createMessage', (msg)=>{
+    socket.on('createMessage', (msg, callback)=>{
         console.log('Create message: ', msg);
         io.emit('newMessage', generateMessage(msg.from, msg.text));
+        callback();
     });
 
     socket.on('createLocationMessage', (cords) => {
