@@ -20,13 +20,12 @@
 
             <div class="col-sm container ">
                 <div class="container bg-light chatArea">
-                    <p>Welcome to the chat app.</p>
-                    <ol id="messages"></ol>
+                    <div id="messages"></div>
                 </div>
                 <div class="fixed">
                     <form class="form-inline chatBar " id="message-form">
                         <div class="form-group mx-sm-3 mb-2">
-                            <label for="message" >Message</label>
+                            <!-- <label for="message" >Message</label> -->
                             <input type="text" class="form-control" name="message" placeholder="message" autofocus
                                 autocomplete="off">
                         </div>
@@ -43,6 +42,7 @@
     <script src="/js/libs/socket.io.js"></script>
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
     <script src="/js/libs/moment.js"></script>
+    <script src="/js/libs/deparam.js"></script>
     <!-- Put jQuery above the script in which You want to use jQuery -->
     <script src="/js/chat.js"></script>
 </body>
