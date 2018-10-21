@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat | Chat-App</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 bg-primary NavBar">
+                <h3>People</h3>
+                <div id="users"></div>
+            </div>
+
+            <div class="col-sm container ">
+                <div class="container bg-light chatArea">
+                    <p>Welcome to the chat app.</p>
+                    <ol id="messages"></ol>
+                </div>
+                <div class="fixed">
+                    <form class="form-inline chatBar " id="message-form">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="message" >Message</label>
+                            <input type="text" class="form-control" name="message" placeholder="message" autofocus
+                                autocomplete="off">
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Send</button>
+                        <button type="button" class="btn btn-warning ml-2 mb-2" id="send-location">Send Location</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/js/libs/socket.io.js"></script>
+    <script src="/js/libs/jquery-3.3.1.min.js"></script>
+    <script src="/js/libs/moment.js"></script>
+    <!-- Put jQuery above the script in which You want to use jQuery -->
+    <script src="/js/chat.js"></script>
+</body>
+
+</html>
