@@ -1,6 +1,6 @@
 const express = require('express');
 const socketIO = require('socket.io');
-const generateMessage = require('./utils/msg');
+const {generateMessage, generateLocationMessage} = require('./utils/msg');
 // const path = require('path');
 
 const app = express();
@@ -31,6 +31,10 @@ io.on('connection', (socket) => {
         console.log('Create message: ', msg);
         io.emit('newMessage', generateMessage(msg.from, msg.text));
     });
+
+    socket.on('createLocationMessage', (cords) => {
+        io.emit('newLocationMessage', generateLocationMessage('Admin', cords.latitude, cords.longitude));
+    })
 
     socket.on('disconnect', () => {
         console.log('Disconnected from server...');
